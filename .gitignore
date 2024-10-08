@@ -1,0 +1,58 @@
+.vscode/
+.bundle
+
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
+
+# Ignore all logfiles and tempfiles.
+log/*
+tmp/*
+/db/*.sqlite3
+coverage/
+/spec/tmp/*
+/storage/
+
+# Ignore generated files
+/public/system/*
+/public/assets
+/public/uploads/ckeditor
+/public/uploads/ckeditor/*
+/public/uploads/tmp/*
+/public/uploads/tmp
+/public/test
+
+/public/ckeditor_assets
+/public/ckeditor_assets/*
+
+# Ignore sensitive configuration files
+/config/master.key
+/config/database.yml
+/config/credentials.yml.enc
+
+/vendor/
+/node_modules
+
+# Ignore system files
+.DS_Store
+**.DS_Store
+
+dump.rdb
+.env
+.env.test
+
+.rspec
+
+# Additional recommended ignores
+# Ignore rubocop temporary files
+/.rubocop_todo.yml
+
+# Ignore backup files
+*.bak
+*.orig
+
+# Ignore coverage files
+/coverage/
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
