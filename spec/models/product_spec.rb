@@ -70,7 +70,7 @@ RSpec.describe Product, type: :model do
       product = build(:product, title: "unique title")
 
       expect(product).to be_invalid
-      expect(product.errors[:title]).to eq([I18n.t('errors.messages.taken')])
+      expect(product.errors[:title]).to eq([I18n.t("errors.messages.taken")])
     end
   end
 end
