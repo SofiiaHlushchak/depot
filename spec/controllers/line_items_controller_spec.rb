@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe LineItemsController, type: :controller do
+  render_views
+
   describe "POST #create" do
     let(:product) { create(:product) }
 
@@ -9,7 +11,16 @@ RSpec.describe LineItemsController, type: :controller do
         post :create, params: { product_id: product.id }
       }.to change(LineItem, :count).by(1)
 
-      expect(response).to redirect_to(cart_url(assigns(:line_item).cart))
+      expect(response).to redirect_to(store_index_url)
+    end
+
+    it "should create line_item via turbo-stream" do
+      expect {
+        post :create  , params: { product_id: product.id, format: :turbo_stream }
+      }.to change(LineItem, :count).by(1)
+
+      expect(response).to have_http_status(:success)
+      expect(response.body).to match(/<tr class="line-item-highlight">/)
     end
   end
 
