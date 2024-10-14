@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Product, type: :model do
   describe "validations" do
@@ -44,12 +46,12 @@ RSpec.describe Product, type: :model do
 
       it "validates image URLs" do
         valid_urls.each do |image_url|
-          product = build(:product, image_url: image_url)
+          product = build(:product, image_url:)
           expect(product).to be_valid, "#{image_url} must be valid"
         end
 
         invalid_urls.each do |image_url|
-          product = build(:product, image_url: image_url)
+          product = build(:product, image_url:)
           expect(product).to be_invalid, "#{image_url} must be invalid"
         end
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StoreController < ApplicationController
   include CurrentCart
   before_action :set_cart
@@ -8,7 +10,6 @@ class StoreController < ApplicationController
   end
 
   private
-
   def update_counter
     session[:counter] = (session[:counter] || 0) + 1
   end
