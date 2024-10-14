@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[show edit update destroy]
 
   # GET /products or /products.json
   def index
@@ -7,8 +9,7 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 or /products/1.json
-  def show
-  end
+  def show; end
 
   # GET /products/new
   def new
@@ -16,8 +17,7 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /products or /products.json
   def create
@@ -42,8 +42,8 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
 
-        @product.broadcast_replace_later_to 'products',
-          partial: 'store/product'
+        @product.broadcast_replace_later_to "products",
+                                            partial: "store/product"
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -67,11 +67,11 @@ class ProductsController < ApplicationController
   end
 
   private
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
-    end
+  def product_params
+    params.require(:product).permit(:title, :description, :image_url, :price)
+  end
 end

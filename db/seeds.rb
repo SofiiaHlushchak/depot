@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 Product.delete_all
 
-
-Product.create!(title: 'Design and Build Great Web APIs',
-    description: %(<p>
+Product.create!(title: "Design and Build Great Web APIs",
+                description: %(<p>
         <em>Robust, Reliable, and Resilient</em>
         APIs are transforming the business world at an increasing pace. Gain
         the essential skills needed to quickly design, build, and deploy
@@ -14,6 +15,5 @@ Product.create!(title: 'Design and Build Great Web APIs',
         open-source utilities and common programming patterns you can apply
         right away.
         </p>),
-    image_url: '',
-    price: 24.95
-)
+                image_url: "",
+                price: 24.95)

@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe CartsController, type: :controller do
   describe "DELETE #destroy" do
@@ -11,12 +13,12 @@ RSpec.describe CartsController, type: :controller do
     end
 
     it "should destroy cart" do
-      expect {
+      expect do
         delete :destroy, params: { id: cart.id }
-      }.to change(Cart, :count).by(-1)
+      end.to change(Cart, :count).by(-1)
 
       expect(response).to redirect_to(store_index_url)
-      expect(flash[:notice]).to eq('Your cart is currently empty.')
+      expect(flash[:notice]).to eq("Your cart is currently empty.")
     end
   end
 end

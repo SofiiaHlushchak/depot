@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe ProductsController, type: :controller do
   let(:valid_attributes) do
@@ -12,9 +14,9 @@ RSpec.describe ProductsController, type: :controller do
 
   describe "POST /create" do
     it "creates a new product" do
-      expect {
+      expect do
         post :create, params: { product: valid_attributes }
-      }.to change(Product, :count).by(1)
+      end.to change(Product, :count).by(1)
       expect(response).to have_http_status(:redirect)
     end
   end
@@ -38,9 +40,9 @@ RSpec.describe ProductsController, type: :controller do
 
     context "when product is in a cart" do
       it "can't delete product in cart" do
-        expect {
+        expect do
           delete :destroy, params: { id: product_in_cart.id }
-        }.not_to change(Product, :count)
+        end.not_to change(Product, :count)
 
         expect(response).to redirect_to(products_url)
       end
@@ -50,9 +52,9 @@ RSpec.describe ProductsController, type: :controller do
       let!(:product_not_in_cart) { create(:product, title: "ASD") }
 
       it "should destroy product" do
-        expect {
+        expect do
           delete :destroy, params: { id: product_not_in_cart.id }
-        }.to change(Product, :count).by(-1)
+        end.to change(Product, :count).by(-1)
 
         expect(response).to redirect_to(products_url)
       end
