@@ -19,7 +19,7 @@ RSpec.describe OrdersController, type: :controller do
 
       it "redirects to the created order" do
         post :create, params: { order: valid_attributes }
-        expect(response).to redirect_to(Order.last)
+        expect(response).to redirect_to(store_index_url)
       end
     end
   end
