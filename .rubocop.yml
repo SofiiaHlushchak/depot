@@ -6,6 +6,7 @@ AllCops:
         - "config/**/*"
         - "vendor/**/*"
         - "lib/**/*"
+        - "**/*.erb"
 
 Gemspec/AddRuntimeDependency:
     Enabled: true
@@ -91,6 +92,8 @@ Lint/UselessRescue:
     Enabled: true
 Lint/UselessRuby2Keywords:
     Enabled: true
+Metrics/AbcSize:
+    Max: 25
 Metrics/CollectionLiteralLength:
     Enabled: true
 Metrics/MethodLength:
