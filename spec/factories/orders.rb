@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :order do
-    name { "Dave Thomas" }
+    name { "MyString" }
     address { "MyText" }
-    email { "dave@example.org" }
-    pay_type { "Credit card" }
+    email { "MyString" }
+    pay_type { Order.pay_types.keys.sample }
   end
 end
