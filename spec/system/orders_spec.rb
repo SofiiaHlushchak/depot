@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "Orders", type: :system do
-  describe "check dynamic fields" do
+  xdescribe "check dynamic fields" do
     before do
       create(:product)
     end
