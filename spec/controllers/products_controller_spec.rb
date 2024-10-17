@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe ProductsController, type: :controller do
+  login_as
+
   let(:valid_attributes) do
     {
       title: "My Product",

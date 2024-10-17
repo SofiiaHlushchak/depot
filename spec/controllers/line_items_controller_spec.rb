@@ -4,6 +4,7 @@ require "rails_helper"
 
 RSpec.describe LineItemsController, type: :controller do
   render_views
+  login_as
 
   describe "POST #create" do
     let(:product) { create(:product) }
