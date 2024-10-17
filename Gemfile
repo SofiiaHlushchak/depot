@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "rails", "~> 7.2.1"
 
+gem "bcrypt", "~> 3.1", ">= 3.1.12"
 gem "importmap-rails"
 gem "jbuilder"
 gem "puma", ">= 5.0"
