@@ -11,8 +11,8 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema[7.2].define(version: 20_241_014_112_722) do
+# rubocop:disable Style/NumericLiterals
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_084427) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +48,15 @@ ActiveRecord::Schema[7.2].define(version: 20_241_014_112_722) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
 end
+# rubocop:enable Style/NumericLiteralsЗЗЗ

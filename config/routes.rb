@@ -1,7 +1,17 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  root "store#index", as: "store_index"
+
+  get "admin" => "admin#index"
+  controller :sessions do
+    get "login" => :new
+    post "login" => :create
+    delete "logout" => :destroy
+  end
+  resources :users
   resources :line_items
   resources :carts
-  root "store#index", as: "store_index"
   resources :products
   resources :orders
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
