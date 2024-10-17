@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe AdminController, type: :controller do
+  login_as
+
   describe "GET #index" do
     it "returns a successful response" do
       get :index

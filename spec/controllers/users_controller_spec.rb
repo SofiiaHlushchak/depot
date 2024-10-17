@@ -3,11 +3,9 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
-  describe "GET #index" do
-    before do
-      create(:user)
-    end
+  login_as
 
+  describe "GET #index" do
     it "returns a successful response" do
       get :index
 
