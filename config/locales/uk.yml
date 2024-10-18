@@ -1,0 +1,60 @@
+uk:
+    layouts:
+        application:
+            title: "Практична книжкова полиця"
+            home: "Головна"
+            questions: "Питання"
+            news: "Новини"
+            contact: "Контакти"
+    store:
+        index:
+            title_html: "Ваш Практичний Каталог"
+        product:
+            add_html: "Додати до кошика"
+    carts:
+        cart:
+            title: "Ваш кошик"
+            empty: "Очистити"
+            checkout: "Оформити"
+    orders:
+        new:
+            legend: "Будь ласка, введіть свої дані"
+        form:
+            name: "Ім'я"
+            address_html: "Адреса"
+            email: "E-mail"
+            pay_type: "Оплатити за допомогою"
+            pay_prompt_html: "Оберіть спосіб оплати"
+            submit: "Підтвердити замовлення"
+            pay_types:
+                "Check": "Чек"
+                "Credit card": "Кредитна картка"
+                "Purchase order": "Закупівельний ордер"
+        check:
+            routing_number: "Номер маршруту"
+            account_number: "Номер рахунку"
+        cc:
+            cc_number: "Номер картки"
+            expiration_date: "Термін дії"
+        po:
+            po_number: "Номер PO #"
+    activerecord:
+        errors:
+            messages:
+                inclusion: "не входить до списку"
+                blank: "не може бути порожнім"
+        models:
+            order: "замовлення"
+        attributes:
+            order:
+                address: "Адреса"
+                name: "Ім'я"
+                email: "Електронна пошта"
+                pay_type: "Спосіб оплати"
+    errors:
+        template:
+            body: "Є проблеми з наступними полями:"
+            header:
+                one: "1 помилка завадила збереженню цього %{model}"
+                other: "%{count} помилок завадили збереженню цього %{model}"
+    thanks: "Дякуємо за ваше замовлення"
