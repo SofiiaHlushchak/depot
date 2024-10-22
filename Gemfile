@@ -36,3 +36,5 @@ group :test do
   gem "rails-controller-testing"
   gem "selenium-webdriver"
 end
+
+gem "image_processing", "~> 1.13"
